@@ -1,14 +1,25 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, View, Text, Image, Dimensions} from 'react-native';
 
 const Post = (props) => {
+  const postData = props.route.params.selectedPost;
+
   return (
-    <View>
-      <Text style={{fontSize: 50}}>Post</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text style={{margin: 10, fontSize: 20, fontWeight: 'bold'}}>
+          {postData.userName}
+        </Text>
+        <Image
+          source={{uri: postData.img}}
+          style={{
+            height: Dimensions.get('window').height / 2,
+          }}
+        />
+        <Text style={{margin: 10}}>{postData.description}</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
 export {Post};
-
-const styles = StyleSheet.create({});

@@ -49,13 +49,27 @@ const post_data = [
   },
 ];
 const TimeLine = (props) => {
-  const renderPostData = ({item}) => <PostCard post={item} />;
+  const renderPostData = ({item}) => {
+    return (
+      <PostCard
+        post={item}
+        onSelect={() =>
+          props.navigation.navigate('PostPage', {selectedPost: item})
+        }
+      />
+    );
+  };
   return (
     <View>
       <FlatList
         keyExtractor={(_, index) => index.toString()}
         data={post_data}
         renderItem={renderPostData}
+        ItemSeparatorComponent={() => (
+          <View
+            style={{borderWidth: 1, marginVertical: 5, borderColor: '#bdbdbd'}}
+          />
+        )}
       />
     </View>
   );
