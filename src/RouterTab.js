@@ -21,7 +21,7 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function MainComponent() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="MainPage">
       <Stack.Screen name="MainPage" component={Main} />
       <Stack.Screen name="PostPage" component={Post} />
     </Stack.Navigator>
@@ -31,7 +31,7 @@ function RouterTab() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="PostPage"
+        initialRouteName="MainComponentPage"
         tabBarOptions={{
           activeTintColor: 'purple',
         }}>
