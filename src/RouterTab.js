@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Main, Post, Friends} from './pages';
+import {TimeLine, Post, Friends} from './pages';
 // import First from './pages/First';
 // import Second from './pages/Second';
 
@@ -22,7 +22,7 @@ const Tab = createBottomTabNavigator();
 function MainComponent() {
   return (
     <Stack.Navigator initialRouteName="MainPage">
-      <Stack.Screen name="MainPage" component={Main} />
+      <Stack.Screen name="MainPage" component={TimeLine} />
       <Stack.Screen name="PostPage" component={Post} />
     </Stack.Navigator>
   );
