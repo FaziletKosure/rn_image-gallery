@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {TimeLine, Post, Friends} from './pages';
+import {TimeLine, Post, PerfectNumber} from './pages';
 // import First from './pages/First';
 // import Second from './pages/Second';
 
@@ -36,9 +36,9 @@ function RouterTab() {
           activeTintColor: 'purple',
         }}>
         <Tab.Screen
-          name="FriendsPage"
-          component={Friends}
-          options={{title: 'Friends'}}
+          name="PerfectPage"
+          component={PerfectNumber}
+          options={{title: 'PerfectNum'}}
         />
         <Tab.Screen
           name="MainComponentPage"
